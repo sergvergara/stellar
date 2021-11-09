@@ -55,7 +55,7 @@ public class main {
                                                                                            .setTimeout(180);
         Asset myAsset = Asset.createNonNativeAsset("MINE", questAccountKeys.getAccountId());
 
-        // txBuilder.addOperation( new PaymentOperation.Builder(accountToSponsor.getAccountId(), myAsset, "10").build());
+        txBuilder.addOperation( new PaymentOperation.Builder(accountToSponsor.getAccountId(), myAsset, "10").build());
 
         txBuilder.addOperation(new RevokeAccountSponsorshipOperation.Builder(accountToSponsor.getAccountId()).build());
 

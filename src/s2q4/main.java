@@ -31,6 +31,8 @@ import org.stellar.sdk.*;
 import org.stellar.sdk.CreateAccountOperation.Builder;
 import org.stellar.sdk.responses.AccountResponse;
 import org.stellar.sdk.responses.Response;
+import org.stellar.sdk.Claimant;
+
 
 import shadow.net.i2p.crypto.eddsa.EdDSAPrivateKey;
 import shadow.net.i2p.crypto.eddsa.EdDSAPublicKey;
@@ -57,11 +59,9 @@ public class main {
         Predicate predicate = new Predicate.Not(new Predicate.RelBefore(30));
         Asset     myAsset   = Asset.createNonNativeAsset("CULO", questAccountKeys.getAccountId());
 
-        txBuilder.addOperation(new CreateClaimableBalanceOperation.Builder("100",
-                                                                           myAsset,
-                                                                           List.of(
-                                                                               new Claimant(questAccount.getAccountId(),
-                                                                                            predicate))).build());
+        txBuilder.addOperation(new CreateClaimableBalanceOperation.Builder("100", myAsset, List.of(new Claimant(
+        		questAccount.getAccountId(), predicate))).build()
+        		);
 
         Transaction transaction = txBuilder.build();
 
