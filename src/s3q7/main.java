@@ -41,7 +41,7 @@ import java.nio.charset.StandardCharsets;
 public class main {
 
 	private static String quest3PublicKey = "GAJ2VL2KVWYKTWD2YJZTFGXOWUCI6XSXH6N34AEHHBWNBNQFHQKUCOI6";
-	private static String quest3SecretKey = "SBM4JWJ3TYFNIL44KYGJQRRNFHA3LOB7ROM7WGOTIK3NSVRPLTFBLQKQ";
+	private static String quest3SecretKey = "";
 	private static String url = new String("https://testanchor.stellar.org/auth?account=");
 
 	public static void main(String[] args) throws IOException, InterruptedException, JSONException {
